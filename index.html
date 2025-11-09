@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Guardians</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <header role="banner">
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search..." aria-label="Search site content">
+    </div>
+    <h1>Greenhouse Guardians</h1>
+    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </header>
+
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#home" data-section="home" class="active">
+      <img src="https://cdn2.iconfinder.com/data/icons/device-color/512/Untitled-21-512.png" alt="Home Icon" width="20" height="20">
+      <span>Home</span>
+    </a>
+    <a href="#what" data-section="what">Definition</a>
+    <a href="#causes" data-section="causes">Causes</a>
+    <a href="#effects" data-section="effects">Effects</a>
+    <a href="#solutions" data-section="solutions">Solutions</a>
+    <a href="#data" data-section="data">Data</a>
+    <a href="#feedback" data-section="feedback">Feedback</a>
+  </nav>
+
+  <main role="main">
+    <section id="home">
+      <h2>Greenhouse Guardians</h2>
+      <br>
+      <h2>About Us</h2>
+      <p>Greenhouse Guardians is an initiative focused on addressing one of the most pressing challenges of our time—climate change. We aim to educate individuals, communities, and organizations about the critical role of greenhouse gases in global warming and inspire actions to reduce emissions.</p>
+      <p>Our platform serves as a comprehensive resource for understanding the science behind greenhouse gases, their sources, and their far-reaching effects on ecosystems, weather patterns, and human livelihoods. We believe that informed individuals can make meaningful contributions toward a sustainable planet.</p>
+      <p>Join us on a journey to create a world where the balance of our atmosphere is restored, and future generations can thrive. Whether you're just learning about greenhouse gases or are already a climate advocate, Greenhouse Guardians is here to support you every step of the way.</p>
+      <div class="cta">
+        <a href="#solutions" class="cta-button" role="button">Take Action Now</a>
+      </div>
+    </section>
+
+    <section id="what">
+      <h2>Definition</h2>
+      <p>Greenhouse gases are gases in the Earth's atmosphere that trap heat from the sun, preventing it from escaping.</p>
+      <h3>Role of Greenhouse Gases</h3>
+      <p>Greenhouse gases are essential in maintaining Earth's habitable temperature by trapping heat in the atmosphere, a process known as the greenhouse effect. Without them, the planet would be too cold to support life.</p>
+      <h3>Major Types of Greenhouse Gases</h3>
+      <p>Carbon Dioxide (CO<sub>2</sub>): Released through burning fossil fuels (coal, oil, natural gas), deforestation, and various industrial processes.</p>
+      <p>Methane (CH<sub>4</sub>): Produced during agricultural activities (e.g., livestock digestion), waste decomposition in landfills, and the production of natural gas.</p>
+      <p>Nitrous Oxide (N<sub>2</sub>O): Emitted from agricultural activities, industrial processes, and the combustion of fossil fuels and biomass.</p>
+      <p>Fluorinated Gases: Synthetic gases used in industrial applications, like refrigerants and aerosol propellants, with a much higher heat-trapping potential than (CO<sub>2</sub>).</p>
+    </section>
+
+    <section id="causes">
+      <h2>Causes of Greenhouse Gases</h2>
+      <br>
+      <h3>Energy Production</h3>
+      <p>Fossil fuel combustion for electricity and heat accounts for the largest share of greenhouse gas emissions globally.</p>
+      <h3>Transportation</h3>
+      <p>Cars, airplanes, and ships burning gasoline or diesel emit significant amounts of (CO<sub>2</sub>) and other pollutants.</p>
+      <h3>Industrial Emissions</h3>
+      <p>Factories and industrial processes contribute (CO<sub>2</sub>) and other gases during production and chemical reactions.</p>
+      <h3>Deforestation</h3>
+      <p>Trees absorb (CO<sub>2</sub>); cutting them down reduces the planet's natural ability to balance carbon emissions.</p>
+    </section>
+
+    <section id="effects">
+      <h2>Effects of Greenhouse Gases</h2>
+      <br>
+      <h3>Health Impacts</h3>
+      <p>Increased air pollution can lead to respiratory diseases and other health issues.</p>
+      <h3>Economic Consequences</h3>
+      <p>Damage to infrastructure, agriculture, and ecosystems increases the economic burden on nations.</p>
+      <h3>Arctic and Antarctic Melting</h3>
+      <p>Rising temperatures accelerate ice melting, contributing to global sea-level rise and habitat loss for polar species.</p>
+    </section>
+
+    <section id="solutions">
+      <h2>Ways to Reduce Greenhouse Gases</h2>
+      <br>
+      <h3>Energy Transition</h3>
+      <p>Adopt renewable energy sources like solar, wind, and hydropower to reduce dependence on fossil fuels.</p>
+      <h3>Sustainable Practices</h3>
+      <p>Promote eco-friendly manufacturing and consumption habits to minimize industrial emissions.</p>
+      <h3>Technological Innovations</h3>
+      <p>Develop and invest in carbon capture and storage (CCS) technologies to remove (CO<sub>2</sub>) from the atmosphere.</p>
+      <h3>Community Actions</h3>
+      <p>Encourage individuals to adopt greener lifestyles, such as using public transport, reducing meat consumption, and recycling</p>
+    </section>
+
+    <section id="data">
+      <h2>Greenhouse Gas Emissions</h2>
+      <canvas id="emissionsChart" role="img" aria-label="Pie chart showing greenhouse gas emissions by source"></canvas>
+    </section>
+
+    <section id="feedback">
+      <h4>Feedback</h4>
+      <h6>We value your thoughts and suggestions. Please share your feedback below:</h6>
+      <form id="feedbackForm" action="submit_feedback.php" method="post">
+        <div class="rating">
+          <span class="star" data-value="1" role="button" aria-label="Rate 1 star">☆</span>
+          <span class="star" data-value="2" role="button" aria-label="Rate 2 stars">☆</span>
+          <span class="star" data-value="3" role="button" aria-label="Rate 3 stars">☆</span>
+          <span class="star" data-value="4" role="button" aria-label="Rate 4 stars">☆</span>
+          <span class="star" data-value="5" role="button" aria-label="Rate 5 stars">☆</span>
+        </div>
+        <input type="hidden" id="rating" name="rating" value="0">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="comment" rows="4" placeholder="Your feedback here..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="feedbackList">
+        <?php
+        $sql = "SELECT name, rating, comment FROM feedback ORDER BY timestamp DESC";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            echo '<div class="feedback-item">
+              <p><strong>' . htmlspecialchars($row["name"]) . '</strong> - ' . str_repeat('★', $row["rating"]) . str_repeat('☆', 5 - $row["rating"]) . '</p>
+              <p>' . htmlspecialchars($row["comment"]) . '</p>
+            </div>';
+          }
+        } else {
+          echo '<p>No feedback yet.</p>';
+        }
+        $conn->close();
+        ?>
+      </div>
+    </section>
+  </main>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer role="contentinfo">
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook">📘</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Instagram">📷</a>
+    </div>
+    <div class="quick-links">
+      <a href="#home">Home</a>
+      <a href="#what">Definition</a>
+      <a href="#causes">Causes</a>
+      <a href="#effects">Effects</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#data">Data</a>
+      <a href="#feedback">Feedback</a>
+    </div>
+    <div class="newsletter">
+      <h3>Stay Updated</h3>
+      <form id="newsletterForm">
+        <input type="email" id="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <p>&copy; 2025 Greenhouse Guardians. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
